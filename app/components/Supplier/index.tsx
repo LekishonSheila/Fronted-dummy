@@ -1,77 +1,55 @@
 import React, { useState } from 'react';
-import { BiEdit } from "react-icons/bi";
-import { MdDeleteForever } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 const initialItemRecords = [
 {
-  ReceiptNo: 'Mayonese',
-  Item: 'Food stuff',
-  Amount: 'Food stuff',
-  Quantity: '100gms',
-  DataReceived: '100gms',
+  Name: 'James Kariuki',
+  PhoneNumber: '0795463542',
+  Address: 'South B,Nairobi',
 },
 {
-  ReceiptNo: 'Mayonese',
-  Item: 'Food stuff',
-  Amount: 'Food stuff',
-  Quantity: '100gms',
-  DataReceived: '100gms',
+  Name: 'Ben Gitau',
+  PhoneNumber: '0712345635',
+  Address: 'South C,Nairobi',
  },
 {
-  ReceiptNo: 'Mayonese',
-  Item: 'Food stuff',
-  Amount: 'Food stuff',
-  Quantity: '100gms',
-  DataReceived: '100gms',
+  Name: 'Ann Akoth',
+  PhoneNumber: '0789675432',
+  Address: 'Rongai, Nairobi',
  },
 {
-  ReceiptNo: 'Mayonese',
-  Item: 'Food stuff',
-  Amount: 'Food stuff',
-  Quantity: '100gms',
-  DataReceived: '100gms',
+  Name: 'Jane Kasaya',
+  PhoneNumber: '0746756893',
+  Address: 'Kayole, Nairobi',
 },
 {
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
+  Name: 'John Mburu',
+  PhoneNumber: '0765435627',
+  Address: 'Kibera, Nairobi',
 },
 {
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
+  Name: 'James Kuria',
+  PhoneNumber: '0712435672',
+  Address: 'Karen, Nairobi',
 },
 {
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
+  Name: 'Joe Mbua',
+  PhoneNumber: '0712654376',
+  Address: 'Korongo, Nairobi',
+  },
+{
+  Name: 'Mary Duo',
+  PhoneNumber: '0798456783',
+  Address: 'Karen, Nairobi',
 },
 {
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
+  Name: 'Kariuki Ben',
+  PhoneNumber: '0745678294',
+  Address: 'Kayole, Nairobi',
 },
 {
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
-},
-{
-   ReceiptNo: 'Mayonese',
-   Item: 'Food stuff',
-   Amount: 'Food stuff',
-   Quantity: '100gms',
-   DataReceived: '100gms',
+  Name: 'Faith Akoth',
+  PhoneNumber: '0706119709',
+  Address: 'Ndege, Nairobi',
 },
 ];
 const DataRecord = () => {
@@ -119,7 +97,7 @@ const cancelEdit = () => {
 };
 return (
 <div className="py-4 px-60 font-['Sanchez'] ">
-  <h1 className="text-2xl font-semibold text-orange-400 mb-2 ml-4">Data Records</h1>
+  <h1 className="text-2xl font-semibold text-[#1A1344] mb-2 ml-4">Manage Suppliers</h1>
   <div className="flex space-x-4 mb-4">
     <div className="relative ml-auto mr-40">
       <input
@@ -133,10 +111,9 @@ return (
     <table className="w-full space-evenly" style={{tableLayout: 'fixed'}}>
       <thead>
         <tr className="border-b border-solid border-gray-500">
-          <th className="py-4 px-14 text-left text-20 font-semibold">Item</th>
-          <th className="py-4 px-6 text-left text-20 font-semibold">Category</th>
-          <th className="py-4 px-6 text-left text-20 font-semibold">Quantity</th>
-          <th className="py-4 px-14 text-left text-20 font-semibold">Action</th>
+          <th className="py-4 px-14 text-left text-20 font-semibold">Name</th>
+          <th className="py-4 px-6 text-left text-20 font-semibold">Phone Number</th>
+          <th className="py-4 px-6 text-left text-20 font-semibold">Address</th>
         </tr>
       </thead>
       <tbody>
@@ -146,55 +123,34 @@ return (
                 {isEditing && editIndex === index ? (
                   <input
                     type="text"
-                    value={record.  Item}
-                    onChange={(e) => handleEditChange('Item', e.target.value)}
+                    value={record.Name}
+                    onChange={(e) => handleEditChange('Name', e.target.value)}
                     className="bg-gray-300 text-gray-800 rounded p-2"/>
                 ) : (
-                  record.Item
+                  record.Name
                 )}
               </td>
               <td className="py-4 px-10">
                 {isEditing && editIndex === index ? (
                   <input
                     type="text"
-                    value={record.Item}
+                    value={record.PhoneNumber}
                     onChange={(e) => handleEditChange('NextCalibrationTime', e.target.value)}
                     className="bg-gray-300 text-gray-800 rounded p-2"/>
                 ) : (
-                  record.Item
+                  record.PhoneNumber
                 )}
               </td>
               <td className="py-4 px-16">
                 {isEditing && editIndex === index ? (
                   <input
                     type="text"
-                    value={record.Amount}
+                    value={record.Address}
                     onChange={(e) => handleEditChange('SerialNumber', e.target.value)}
                     className="bg-gray-300 text-gray-800 rounded p-2"/>
                 ) : (
-                  record.Amount
+                  record.Address
                 )}
-              </td>
-              <td className="py-4 px-16 flex space-x-2">
-                {isEditing && editIndex === index ? (
-                  <>
-                <button
-                  className="bg-orange-400 text-black text-lg px-4 py-2 rounded hover:bg-indigo-600"
-                  onClick={handleSaveEdit}>Save</button>
-                <button
-                  className="bg-indigo-600 text-white text-lg px-4 py-2 rounded hover:bg-orange-400"
-                  onClick={cancelEdit}>Cancel</button>
-                  </>
-                ) : (
-                  <BiEdit
-                    size={25}
-                    className="text-indigo-600 cursor-pointer"
-                    onClick={() => handleEdit(index)}/>
-                )}
-                <MdDeleteForever
-                  size={25}
-                  className="text-orange-400 cursor-pointer"
-                  onClick={() => handleDelete(index)}/>
               </td>
             </tr>
           ))}

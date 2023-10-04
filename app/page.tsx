@@ -1,12 +1,21 @@
 "use client";
-// import DataRecords from "./components/Receipt";
+import Addcategory from "./components/AddCategory";
+import Additem from "./components/Additem";
+import Addreceipts from "./components/Addreceiptdetails";
+import Addsupplier from "./components/Addsupplier";
+import ReceiptRecord from "./components/Receipt";
 import DataRecord from "./components/Supplier";
 
 
 export default function Home() {
   return (
     <div>
+      <ReceiptRecord/>
       <DataRecord/>
+      <Addsupplier/>
+      <Addreceipts/>
+      <Additem/>
+      <Addcategory/>
       
     </div>
   );
